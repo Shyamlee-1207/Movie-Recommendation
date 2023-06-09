@@ -1,0 +1,48 @@
+select {
+	display: block	;
+}
+
+#homePagePhoto {
+	height: 100%;
+	width: 100%;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.hideContent {
+	display: none;
+}
+
+.cardWidth {
+	width: 250px;
+	margin: 15px;
+}
+
+.card-align {
+	float: left;
+}
+
+.topMargin {
+	margin-top: 30px;
+}
+
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+.fontSize {
+	font-size: x-large;
+}
+
+.hide-on-med-and-down{
+	display: flex;
+	gap: 10px;
+}

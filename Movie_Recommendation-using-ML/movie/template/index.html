@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   
+    <title>Movie Recommendation System</title>
+
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #d6f3ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #681313;
+            color: #fff;
+        }
+
+        form {
+            text-align: center;
+            margin: 20px auto;
+            width: 300px;
+            
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        } 
+</style>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Reset CSS -->
+<link href="{{ url_for('static', filename='reset.css') }}" rel="stylesheet" type="text/css" />
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<!--Import materialize.css-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+<!-- Custom CSS -->
+<link href="{{ url_for('static', filename='style_index.css') }}" rel="stylesheet" type="text/css" />
+
+<title>Filmy Check</title>
+
+
+</head>
+
+<body>
+
+    <header>
+    <!-- <h1>Movie Recommendation System</h1> -->
+    <nav class="indigo darken-3">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="bold flow-text fontSize">Filmy Check</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <form action = "/feedback" method="post" style="margin: 0px;">
+                        <button class ="btn">Feedback</button>
+                    </form>
+                    
+                </ul>
+                <ul class="sidenav blue lighten-5" id="mobile-demo">
+                    <form action = "/feedback" method="post">
+                        <button class="btn">Feedback</button>
+                    </form>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<banner>
+    <img src="{{ url_for('static', filename='banner.jpg') }}" alt="movie theater screen" class="responsive-image banner-padding"
+        id="homePagePhoto" />
+</banner>
+</header>
+
+<main>
+    <div  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;>
+        <form action="/recommend" method="post">
+        <label for="movie_name">Select a movie:</label>
+        <select id="movie_name" name="movie_name">
+            {% for movie_title in movie_titles %}
+            <option value="{{ movie_title }}">{{ movie_title }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Recommend">
+    </form>
+</div>
+
+    </main>
+
+
+    <footer class="page-footer indigo darken-3">
+        <div class="footer-copyright center">
+            <div class="container center-align">
+                © 2023 Group 4 - Project 1
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

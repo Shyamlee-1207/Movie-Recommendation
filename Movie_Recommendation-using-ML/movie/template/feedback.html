@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+    <style>
+        body {
+          background-image: url("{{ url_for('static', filename='image3.png') }}");
+          background-size: cover;
+        }
+      </style>
+    
+</head>
+<body>
+    <!-- <img src="{{ url_for('static', filename='image3.png') }}" alt="Description of the image"> -->
+    <div class="container"> 
+        <h1>Your Opinions Matter!!</h1>
+ 
+            <form action="https://formsubmit.co/00e1cd9d42fe4041150a5abdf21392e1" method="POST" method="POST">
+
+            <input type="text" name="Name" placeholder="Full Name" required>
+            <input type="email" name="Email" placeholder="Email" required>
+            <select name="container">
+                <option>India</option>
+                <option>Africa</option>
+                <option>USA</option>
+                <option>Australia</option>
+                <option>Europe</option>
+                <option>japan</option>
+                <option>china</option>
+
+            </select>
+            <textarea name="Message" placeholder="Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+
+    </div>
+    
+</body>
+</html>
